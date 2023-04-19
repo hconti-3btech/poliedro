@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('fluxos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_pessoa')->unsigned();
-            $table->foreign('id_pessoas')->references('id')->on('pessoas');
+            $table->foreign('id_pessoa')->references('id')->on('pessoas');
             $table->bigInteger('id_user_resp')->unsigned();
             $table->foreign('id_user_resp')->references('id')->on('users');
             $table->enum('sentido',['ENTRADA','SAIDA'])->default('ENTRADA');
