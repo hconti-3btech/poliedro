@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Controle de Acesso')
-
-@section('plugins.Select2', true)
+@section('title')
+    @yield('title')
+@stop
 
 @section('content_header')
-    <h1>Controle de Acesso</h1>
+    @yield('content_header')
 @stop
 
 @section('content')
@@ -13,10 +13,10 @@
 @stop
 
 @section('css')
-    @livewireStyles
+    {{-- @livewireStyles --}}
 @stop
 
 @section('js')
-    @livewireScripts
+    {{-- @livewireScripts --}}
     @stack('scripts')
 @stop
