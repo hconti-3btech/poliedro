@@ -39,17 +39,6 @@ class PermissaoController extends Controller
      */
     public function create()
     {
-        $mensagens = [
-            'required' => 'O :attribute é obrigatório!',
-            'min' => 'O :attribute deve ter no minimo 3 caracteres',
-            'max' => 'O :attribute deve ter no maximo 100 caracteres',
-        ];
-
-        $request->validate([
-            'nome'          =>  'required|max:100|min:3',
-            'cpf'     =>  'required'
-        ],$mensagens);
-        
         $valor = session()->get('valor');
         
         if (isset($valor)){
@@ -71,11 +60,17 @@ class PermissaoController extends Controller
     {
         $user = Auth::user();
 
+        $mensagens = [
+            'vencimento.required' => 'O Vencimento é obrigatório!',
+            'nv_permissao.required' => 'O Nivel de permissão é obrigatório!',
+            'id_pessoa.required' => 'A Pessoa é obrigatório!',
+        ];
+
         $request->validate([
             'id_pessoa' =>  'required|exists:pessoas,id',
             'nv_permissao'     =>  'required',
             'vencimento' => 'required',
-        ]);
+        ],$mensagens);
 
         $permissao = new Permissoes;
 
