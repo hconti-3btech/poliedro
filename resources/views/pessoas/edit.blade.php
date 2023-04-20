@@ -37,7 +37,7 @@
                                     <option value='ALUNO' {{ old('tipo') == $pessoa->tipo ? 'selected' : ''}}>ALUNO</option>
                                     <option value='FAMILIAR' {{ old('tipo') == $pessoa->tipo ? 'selected' : ''}}>FAMILIAR</option>
                                     <option value='VISITANTE' {{ old('tipo') == $pessoa->tipo ? 'selected' : ''}}>VISITANTE</option>
-                                    <option value='FUNCIONARIOS' {{ old('tipo') == $pessoa->tipo ? 'selected' : ''}}>FUNCIONARIOS</option>
+                                    <option value='FUNCIONARIO' {{ old('tipo') == $pessoa->tipo ? 'selected' : ''}}>FUNCIONARIO</option>
                                     <option value='PRETADOR' {{ old('tipo') ==  $pessoa->tipo ? 'selected' : ''}}>PRETADOR</option>
 
                                 </select>

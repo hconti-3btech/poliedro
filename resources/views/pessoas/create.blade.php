@@ -35,7 +35,7 @@
                                     <option value='ALUNO' {{ old('tipo') == 'ALUNO'? 'selected' : ''}}>ALUNO</option>
                                     <option value='FAMILIAR' {{ old('tipo') == 'FAMILIAR'? 'selected' : ''}}>FAMILIAR</option>
                                     <option value='VISITANTE' {{ old('tipo') == 'VISITANTES'? 'selected' : ''}}>VISITANTE</option>
-                                    <option value='FUNCIONARIOS' {{ old('tipo') == 'FUNCIONARIOS'? 'selected' : ''}}>FUNCIONARIOS</option>
+                                    <option value='FUNCIONARIO' {{ old('tipo') == 'FUNCIONARIO'? 'selected' : ''}}>FUNCIONARIO</option>
                                     <option value='PRETADOR' {{ old('tipo') == 'PRETADOR'? 'selected' : ''}}>PRETADOR</option>
 
                                 </select>
