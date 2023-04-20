@@ -39,6 +39,17 @@ class PermissaoController extends Controller
      */
     public function create()
     {
+        $mensagens = [
+            'required' => 'O :attribute é obrigatório!',
+            'min' => 'O :attribute deve ter no minimo 3 caracteres',
+            'max' => 'O :attribute deve ter no maximo 100 caracteres',
+        ];
+
+        $request->validate([
+            'nome'          =>  'required|max:100|min:3',
+            'cpf'     =>  'required'
+        ],$mensagens);
+        
         $valor = session()->get('valor');
         
         if (isset($valor)){
