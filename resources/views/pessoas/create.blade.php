@@ -66,6 +66,17 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
+                                    <span class="input-group-text">Nivel Permissão: </span>
+                                </div>
+                                <select class="custom-select rounded-0" id="nv_permissao" name="nv_permissao">
+                                    <option value='TOTAL' {{ old('nv_permissao') == 'TOTAL' ? 'selected' : ''}}>TOTAL</option>    
+                                    <option value='DIA' {{ old('nv_permissao') == 'DIA' ? 'selected' : ''}}>DIA</option>    
+                                    <option value='NOITE' {{ old('nv_permissao') == 'NOITE' ? 'selected' : ''}}>NOITE</option>    
+                                    <option value='NENHUM' {{ old('nv_permissao') == 'NENHUM' ? 'selected' : ''}}>NENHUM</option>    
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
                                     <span class="input-group-text">Foto: </span>
                                 </div>
                                 <div class="custom-file">

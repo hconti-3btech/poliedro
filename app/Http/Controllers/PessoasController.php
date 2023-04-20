@@ -58,7 +58,8 @@ class PessoasController extends Controller
         $pessoa->nome = $request->nome;
         $pessoa->cpf = $request->cpf;
         $pessoa->ra = $request->ra;
-
+        $pessoa->ra = $request->ra;
+        $pessoa->nv_permissao = $request->nv_permissao;
 
         // Img foto
         if($request->hasFile('imgFile')!=null && $request->file('imgFile')->isValid()){

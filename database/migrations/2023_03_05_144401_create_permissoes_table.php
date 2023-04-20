@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('id_pessoa')->unsigned();
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
-            $table->enum('nv_permissao',['TOTAL','DIA','NOITE','VIAGEM','NENHUM']);
             $table->timestamp('vencimento')->nullable();
             $table->string('motivo')->nullable();
             $table->bigInteger('id_user_resp')->unsigned()->nullable();

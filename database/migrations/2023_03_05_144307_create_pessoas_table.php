@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('cpf')->unique();
             $table->string('ra')->nullable();
+            $table->enum('nv_permissao',['TOTAL','DIA','NOITE','NENHUM']);
             $table->string('foto')->nullable();
             $table->string('foto_doc')->nullable();
             $table->timestamps();

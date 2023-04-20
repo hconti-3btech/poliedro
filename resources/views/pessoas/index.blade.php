@@ -46,6 +46,7 @@
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>RA</th>
+                                <th>Nv Acesso</th>
                                 <th>Editar</th>
                                 <th>Deletar</th>
                             </tr>
@@ -58,6 +59,7 @@
                                     <td>{{$dataValue['nome']}} </td>
                                     <td>{{$dataValue['cpf']}} </td>
                                     <td>{{$dataValue['ra']}} </td>
+                                    <td>{{$dataValue['nv_permissao']}} </td>
                                     <td><a href="{{route('pessoas.edit',["id"=>$dataValue['id']])}}" class="btn btn-primary btn-sm">Editar</a></td>
                                     <td><a href="{{route('pessoas.destroy',["id"=>$dataValue['id']])}}" class="btn btn-danger btn-sm" onclick="return confirmar()">Deletar</a></td>
                                 </tr>

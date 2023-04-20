@@ -1,7 +1,9 @@
 <div id='componet'>
-
     <div class="row">
         <div class="col-6">
+            @if ($msg!= '')
+                <div class="alert alert-danger"><pre>{{$msg}}</pre></div>    
+            @endif
             <div class="card">
                 <div class="card-header p-1">
                     <form method="POS">
@@ -42,24 +44,12 @@
                             <div class="card-body pt-0">
                                 <div class="row">
                                     <div class="col-7 p-3">
-                                        <h3 class="lead">{{ $pessoaTipo }}</h3>
+                                        <h3 class="lead">Tpo : {{ $pessoaTipo }}</h3>
+                                        <h3 class="lead">Permissão :{{ $nv_permissao }}</h3>
+                                        <hr>
                                         <h1 class="lead"><b>{{ $pessoaNome  }}</b></h1>
-                                        <h1 class="lead"><b>{{ $pessoaRa  }}</b></h1>
+                                        <p class="text-muted text-lg"><b>{{ $pessoaRa  }}</b></p>
                                         <p class="text-muted text-lg"><b>{{$pessoaCPF}}</b></p>
-                                        {{-- <ul class="ml-4 mb-0 fa-ul text-muted">
-                                            <li class="small">
-                                                <span class="fa-li">
-                                                    <i class="fas fa-lg fa-building"></i>
-                                                </span> Address: Demo Street
-                                                    123, Demo City 04312, NJ
-                                            </li>
-                                            <li class="small">
-                                                <span class="fa-li">
-                                                    <i class="fas fa-lg fa-phone"></i>
-                                                </span> Phone #: + 800 - 12 12 23
-                                                52
-                                            </li>
-                                        </ul> --}}
                                     </div>
                                     <div class="col-5 p-3">
                                         <a href="{{asset('storage/img/pessoas/'.$pessoaFoto)}}" data-toggle="lightbox" >
@@ -97,7 +87,6 @@
                     <table id="permissoes" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Nivel</th>
                                 <th>Vencimento</th>
                                 <th>Motivo</th>
                                 <th>Responsavel</th>
@@ -106,7 +95,6 @@
                         <tbody>
                             @foreach ($permissoes as $dataValue)
                                 <tr>
-                                    <td>{{$dataValue->nv_permissao}} </td>
                                     <td>{{$dataValue->vencimento}} </td>
                                     <td>{{$dataValue->motivo}} </td>
                                     <td>{{$dataValue->responsavel}} </td>
