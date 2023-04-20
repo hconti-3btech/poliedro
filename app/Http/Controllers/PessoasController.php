@@ -36,10 +36,18 @@ class PessoasController extends Controller
      */
     public function store(Request $request)
     {
+
+        $mensagens = [
+            'required' => 'O :attribute é obrigatório!',
+            'min' => 'O :attribute deve ter no minimo 3 caracteres',
+            'max' => 'O :attribute deve ter no maximo 100 caracteres',
+        ];
+
         $request->validate([
             'nome'          =>  'required|max:100|min:3',
             'cpf'     =>  'required'
-        ]);
+        ],$mensagens);
+
 
         // Deixa valor em branco caso nao faça o upload
         $imageName = '';
