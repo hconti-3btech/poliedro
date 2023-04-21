@@ -94,9 +94,11 @@ class PessoasController extends Controller
         session()->put('valor', $pessoa->id);
 
         return redirect()
-            ->route('permissao.create')
+            ->route('home')
             ->with(['msg'   =>  'Pessoa CADASTRADA com sucesso',
                     'type'  =>  'success']);
+
+                    
     }
 
     /**
